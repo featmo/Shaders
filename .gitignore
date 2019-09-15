@@ -4,3 +4,5 @@ OSL/half_tone.oso
 OSL/ramp_v001.osl
 OSL/ramp_v001.oso
 experiments/test_001.frag
+OSL/*.oso
+OSL/haltone/*.oso

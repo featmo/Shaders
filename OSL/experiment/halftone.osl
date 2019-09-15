@@ -1,0 +1,24 @@
+shader halftone [[string help="halftone"]]
+(
+
+    vector UVW = P,//transform("raster", P),
+    point Vector = P,
+    float scale = 1.0,
+    float angle = 45.0, 
+    color black_dots = 0.0,
+    color white_dots = 1.0,   
+    output color out = 0.0,
+)
+{
+    vector pos = rotate(UVW, radians(angle), 0.0, vector(0.0,0.0,1.0));
+    pos = vector(pos[0]/scale, pos[1]/scale, pos[2]);
+    if (scale == 0.0){
+        pos[0] = 0.5;
+        pos[1] = 0.5;
+    }
+    pos = pos-floor(pos);
+
+    float dist = 1.0 - (distance(vector(0.5,0.5,0.0), pos) / (sqrt(2.0) / 2.5));
+    color factor = smoothstep(-5.0, 0.1, 0.05 - sqrt(dist));
+    out = mix(black_dots, white_dots, factor);
+}

@@ -1,0 +1,30 @@
+shader ramp
+(
+    point Pos = P,
+    color col_in_a = color(1.0,0.0,0.0),
+    color col_in_b = color(0.0,1.0,0.0),
+    float offset = 0.7,
+    float scale = 1,
+    output color col_out = color(1.0)
+)
+{
+    float x = Pos[0];
+    float y = Pos[1];
+    float z = Pos[2];
+
+    float stripe_x = abs(sin(x*scale)); 
+    float stripe_y = abs(sin((y)*scale));
+    float stripe_xy = abs(sin((x-y)*scale)); 
+    float stripe_yx = abs(sin((y+x)*scale));  
+    float stripe_z = sin(z*scale); 
+
+    float blend_x = 1/abs(stripe_x);
+    float blend_y = 1/(stripe_y);
+    float blend_z = 1/abs(stripe_z);
+    float blend_xy = 1/abs(stripe_xy);
+    float blend_yx = 1/abs(stripe_yx);
+
+    float blend = blend_x*blend_y*blend_xy*blend_yx;
+    color col = mix(col_in_a, col_in_b, blend) * offset;
+    col_out = col;
+}

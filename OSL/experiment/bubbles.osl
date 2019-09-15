@@ -1,0 +1,37 @@
+/**
+By Moses Eribo
+TODO: Figure out how mod and sign correlate
+ **/
+
+/****
+TODO: figure out how this works
+shader checkered_v001(
+    vector pos = P,
+    color color_1 = 0.0,
+    color color_2 = 1.0,
+    float frequency = 1,
+    output color out = 0.0
+)
+{
+    float line_x = sin(pos[0] * frequency)+0.5;
+    float line_y = sin(pos[1] * frequency)+0.5;
+    float total  = floor(mod(line_x+line_y,2.0));
+    out = mix(color_1, color_2, total);
+    //out = total;
+}
+
+ ****/
+
+shader bubbles(
+    vector pos = P,
+    color color_1 = 0.0,
+    color color_2 = 1.0,
+    float frequency = 1,
+    output color out = 0.0
+)
+{
+    float line_x = sin(pos[0] * frequency)+0.5;
+    float line_y = sin(pos[1] * frequency)+0.5;
+    float total  = mod(line_x+line_y,2.0);
+    out = mix(color_1, color_2, total);
+}
