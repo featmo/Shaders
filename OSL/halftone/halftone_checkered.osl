@@ -6,15 +6,15 @@ inspired by manga and coffee
 shader halftone_checkered(
     vector uvw = transform("raster", P),
     vector norm = N,
-    float angle = 45,
+    float angle = 45.0,
     color color_1 = 0.0,
     color color_2 = 1.0,
     float frequency = 1,
     float length_x = 0,
     output color out = 0.0,
-    float roughness = 0,
+    float roughness = 0.0,
     float size = 0.5,
-    output closure color BSDF = 0
+    output closure color BSDF = 0.0
 )
 {
     

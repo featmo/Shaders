@@ -6,3 +6,7 @@ OSL/ramp_v001.oso
 experiments/test_001.frag
 OSL/*.oso
 OSL/haltone/*.oso
+GLSL/out_shaders
+OSL/metallic/metal_dirt.oso
+OSL/halftone/halftone_checkered.oso
+

@@ -1,0 +1,18 @@
+shader metallic_dirt(
+    color cin_1 = 1.0,
+    color cin_2 = 0.0,
+    float roughness_1 = 0.0,
+    float roughness_2 = 0.0,
+    float frequency = 0.0,
+    output color cout = 0.0,
+    output closure color BSDF = 0.0
+)
+{
+    closure color primary = 0.0;
+    closure color secondary = 0.0;
+    primary = microfacet_beckmann(N, roughness_1)*cin_1;
+    secondary = microfacet_beckmann(N, frequency*P[0])*cin_2; 
+    BSDF = secondary;
+
+    cout = cin_1;
+}

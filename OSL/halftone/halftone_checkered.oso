@@ -1,6 +1,6 @@
 OpenShadingLanguage 1.00
 # Compiled by oslc 1.9.9
-# options: -o C:\Users\moses\AppData\Local\Temp\tmpcef92g6e.oso -IC:\Users\moses\Apps\blender-2.80rc1-windows64\2.80\scripts\addons\cycles\shader
+# options: -o C:\Users\moses\AppData\Local\Temp\tmpbz4b_539.oso -IC:\Users\moses\Apps\blender-2.80rc1-windows64\2.80\scripts\addons\cycles\shader
 shader halftone_checkered
 param	vector	uvw	0 0 0		%read{56,56} %write{1,1} %initexpr
 param	vector	norm	0 0 0		%read{75,75} %write{2,2} %initexpr
@@ -102,27 +102,27 @@ temp	float	$tmp56	%read{72,72} %write{71,71}
 temp	closure color	$tmp57	%read{76,76} %write{75,75}
 const	string	$const17	"diffuse_toon"		%read{75,75} %write{2147483647,-1}
 code uvw
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:5
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:7
 #     vector uvw = transform("raster", P),
-	functioncall	$const2 2 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{5} %argrw{"r"}
+	functioncall	$const2 2 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{7} %argrw{"r"}
 # 2.80\scripts\addons\cycles\shader\stdosl.h:379
 #   return transform("common", to, p);
 	transform	uvw $const3 $const1 P 	%filename{"2.80\scripts\addons\cycles\shader\stdosl.h"} %line{379} %argrw{"wrrr"}
 code norm
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:6
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:8
 #     vector norm = N,
-	assign		norm N 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{6} %argrw{"wr"}
+	assign		norm N 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{8} %argrw{"wr"}
 code ___main___
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:19
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:21
 #     vector pos = rotate(uvw, radians(angle), 0.0, vector(0.0,0.0,1.0));
-	functioncall	$const4 6 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{19} %argrw{"r"}
+	functioncall	$const4 6 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{21} %argrw{"r"}
 # 2.80\scripts\addons\cycles\shader\stdosl.h:112
 #   return x * (M_PI / 180.0);
 	div		$tmp2 $const5 $const6 	%filename{"2.80\scripts\addons\cycles\shader\stdosl.h"} %line{112} %argrw{"wrr"}
 	mul		$tmp1 angle $tmp2 	%argrw{"wrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:19
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:21
 #     vector pos = rotate(uvw, radians(angle), 0.0, vector(0.0,0.0,1.0));
-	assign		$tmp3 $const7 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{19} %argrw{"wr"}
+	assign		$tmp3 $const7 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{21} %argrw{"wr"}
 	functioncall	$const9 59 	%argrw{"r"}
 # 2.80\scripts\addons\cycles\shader\stdosl.h:387
 #   vector axis = normalize(b - a);
@@ -207,21 +207,21 @@ code ___main___
 	sub		$tmp46 uvw $tmp3 	%line{421} %argrw{"wrr"}
 	transformv	$tmp45 ___233_M $tmp46 	%argrw{"wrr"}
 	add		pos $tmp45 $tmp3 	%argrw{"wrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:23
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:25
 #     float line_x = smoothstep(-0.1,length_x, sin(pos[0] / frequency));
-	compref		$tmp48 pos $const11 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{23} %argrw{"wrr"}
+	compref		$tmp48 pos $const11 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{25} %argrw{"wrr"}
 	div		$tmp49 $tmp48 frequency 	%argrw{"wrr"}
 	sin		$tmp47 $tmp49 	%argrw{"wr"}
 	smoothstep	line_x $const14 length_x $tmp47 	%argrw{"wrrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:24
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:26
 #     float line_y = smoothstep(-0.1,0.0, sin(pos[1] / frequency));
-	compref		$tmp51 pos $const12 	%line{24} %argrw{"wrr"}
+	compref		$tmp51 pos $const12 	%line{26} %argrw{"wrr"}
 	div		$tmp52 $tmp51 frequency 	%argrw{"wrr"}
 	sin		$tmp50 $tmp52 	%argrw{"wr"}
 	smoothstep	line_y $const14 $const7 $tmp50 	%argrw{"wrrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:26
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:28
 #     float total = mod(line_x+line_y, 2.0);
-	add		$tmp53 line_x line_y 	%line{26} %argrw{"wrr"}
+	add		$tmp53 line_x line_y 	%line{28} %argrw{"wrr"}
 	functioncall	$const16 73 	%argrw{"r"}
 # 2.80\scripts\addons\cycles\shader\stdosl.h:207
 #   return a - b * floor(a / b);
@@ -229,14 +229,14 @@ code ___main___
 	floor		$tmp54 $tmp55 	%argrw{"wr"}
 	mul		$tmp56 $const15 $tmp54 	%argrw{"wrr"}
 	sub		total $tmp53 $tmp56 	%argrw{"wrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:27
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:29
 #     color col = mix(color_1, color_2, total);
-	mix		col color_1 color_2 total 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{27} %argrw{"wrrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:28
+	mix		col color_1 color_2 total 	%filename{"C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl"} %line{29} %argrw{"wrrr"}
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:30
 #     out = mix(color_1, color_2, total);
-	mix		out color_1 color_2 total 	%line{28} %argrw{"wrrr"}
-# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:31
+	mix		out color_1 color_2 total 	%line{30} %argrw{"wrrr"}
+# C:\Users\moses\Design\experiments\..\..\Dev\Shaders\OSL\halftone\halftone_checkered.osl:33
 #     BSDF = diffuse_toon(norm, size, roughness)*col;
-	closure		$tmp57 $const17 norm size roughness 	%line{31} %argrw{"wrrrr"}
+	closure		$tmp57 $const17 norm size roughness 	%line{33} %argrw{"wrrrr"}
 	mul		BSDF $tmp57 col 	%argrw{"wrr"}
 	end
